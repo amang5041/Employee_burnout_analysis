@@ -14,7 +14,7 @@ with open('models/scaler.pkl', 'rb') as file:
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('front.html')
 
 @app.route('/predict', methods = ['POST'])
 def predict():
@@ -42,7 +42,7 @@ def predict():
         # Make a prediction using the model
         prediction = model.predict(scaled_data)[0]
         rounded_prediction = round(prediction, 2) 
-        return render_template('index.html', prediction=rounded_prediction)
+        return render_template('front.html', prediction=rounded_prediction)
 
 
 if __name__ == "__main__":

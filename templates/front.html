@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Employees Burnout Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 20px;
+        }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: normal;
+            color: #34495e;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .button-green {
+            background-color: #1abc9c;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        .button-green:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <h3>Employees Burnout Prediction</h3>
+
+    <form action="/predict" method="post">
+        <label for="designation">Designation:</label>
+        <input type="number" id="designation" name="designation" step="0.01" required>
+
+        <label for="resource_allocation">Resource Allocation:</label>
+        <input type="number" id="resource_allocation" name="resource_allocation" step="0.01" required>
+
+        <label for="mental_fatigue_score">Mental Fatigue Score:</label>
+        <input type="number" id="mental_fatigue_score" name="mental_fatigue_score" step="0.01" required>
+
+        <label for="company_type">Company Type:</label>
+        <select name="company_type" id="company_type">
+            <option value="Service">Service</option>
+            <option value="Product">Product</option>
+        </select>
+
+        <label for="wfh_setup_available">WFH Setup Available:</label>
+        <select name="wfh_setup_available" id="wfh_setup_available">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <input type="submit" value="Predict" class="button-green">
+    </form>
+</body>
+</html>
